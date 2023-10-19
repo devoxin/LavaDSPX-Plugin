@@ -5,7 +5,22 @@ import kotlinx.serialization.json.JsonObject;
 import kotlinx.serialization.json.JsonPrimitive;
 import org.jetbrains.annotations.Nullable;
 
-public class NumberUtils {
+public class PrimitiveUtils {
+    @Nullable
+    public static Boolean parseBooleanElement(JsonElement data, String key) {
+        if (!(data instanceof JsonObject obj)) {
+            return null;
+        }
+
+        JsonElement element = obj.get(key);
+
+        if (!(element instanceof JsonPrimitive elementValue)) {
+            return null;
+        }
+
+        return Boolean.parseBoolean(elementValue.getContent());
+    }
+
     @Nullable
     public static Integer parseIntElement(JsonElement data, String key) {
         if (!(data instanceof JsonObject obj)) {
