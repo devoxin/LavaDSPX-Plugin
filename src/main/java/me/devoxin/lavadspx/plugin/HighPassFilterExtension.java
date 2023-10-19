@@ -28,14 +28,14 @@ public class HighPassFilterExtension implements AudioFilterExtension {
     @Nullable
     @Override
     public FloatPcmAudioFilter build(@NotNull JsonElement data, @Nullable AudioDataFormat format, @Nullable FloatPcmAudioFilter output) {
-        Integer cutoffFrequency = NumberUtils.parseIntElement(data, "cutoffFrequency");
-        Float boostFactor = NumberUtils.parseFloatElement(data, "boostFactor");
-
-        if (cutoffFrequency == null || cutoffFrequency <= 0) {
+        if (format == null || output == null) {
             return null;
         }
 
-        if (format == null || output == null) {
+        Integer cutoffFrequency = PrimitiveUtils.parseIntElement(data, "cutoffFrequency");
+        Float boostFactor = PrimitiveUtils.parseFloatElement(data, "boostFactor");
+
+        if (cutoffFrequency == null || cutoffFrequency <= 0) {
             return null;
         }
 
@@ -48,7 +48,7 @@ public class HighPassFilterExtension implements AudioFilterExtension {
 
     @Override
     public boolean isEnabled(@NotNull JsonElement data) {
-        Integer value = NumberUtils.parseIntElement(data, "cutoffFrequency");
+        Integer value = PrimitiveUtils.parseIntElement(data, "cutoffFrequency");
         return value != null && value > 0;
     }
 }

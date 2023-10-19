@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "me.devoxin.lavadspx.plugin"
-version = "0.0.1"
+version = "0.0.2"
 
 lavalinkPlugin {
     name = "plugin-template"
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Devoxin:LavaDSPX:1.0.1")
+    implementation("com.github.Devoxin:LavaDSPX:1.0.2")
 }
 
 publishing {
