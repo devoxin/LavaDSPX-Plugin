@@ -4,13 +4,14 @@ plugins {
     alias(libs.plugins.lavalink)
 }
 
-group = "org.example"
-version = "0.1.0"
+group = "me.devoxin.lavadspx.plugin"
+version = "0.0.1"
 
 lavalinkPlugin {
     name = "plugin-template"
     apiVersion = libs.versions.lavalink.api
     serverVersion = libs.versions.lavalink.server
+    configurePublishing = false
 }
 
 java {
@@ -25,8 +26,14 @@ tasks {
     }
 }
 
+repositories {
+    maven {
+        setUrl("https://jitpack.io")
+    }
+}
+
 dependencies {
-    // add your dependencies here
+    implementation("com.github.Devoxin:LavaDSPX:1.0.1")
 }
 
 publishing {
