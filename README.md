@@ -23,7 +23,7 @@ Once enabled, you can then send a [player update](https://lavalink.dev/api/rest#
         "cutoffFrequency": 80 // Integer, higher than zero, in Hz.
         "boostFactor": 1.0    // Float, higher than 0.0. This alters volume output. A value of 1.0 means no volume change.
       },
-      "normalization": { // Attenuates peaking where peaks have a higher value than {maxAmplitude}. 
+      "normalization": { // Attenuates peaking where peaks are defined as having a higher value than {maxAmplitude}. 
         "maxAmplitude": 0.5 // Float, within the range of 0.0 - 1.0. A value of 0.0 mutes the output.
         "adaptive": true    // Boolean, whether peak amplitudes should persist. Refer to the note below for more information.
       },
