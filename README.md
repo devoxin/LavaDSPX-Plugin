@@ -41,4 +41,4 @@ Once enabled, you can then send a [player update](https://lavalink.dev/api/rest#
 
 ## How to get help
 
-Join the [Lavalink Discord Server](https://discord.gg/FVqbtGu).
+Join the [Lavalink Discord Server](https://discord.gg/wYfsW4HNjb).
