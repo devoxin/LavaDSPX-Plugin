@@ -1,45 +1,44 @@
-# lavalink-plugin-template
+# LavaDSPX-Plugin
+A Lavalink plugin for enabling [LavaDSPX](https://github.com/devoxin/LavaDSPX) filters.
 
-This is a template for creating a plugin for [Lavalink](https://github.com/lavalink-devs/Lavalink). It is written in
-java, but you can also use kotlin (version `1.8.22`) if you want.
-
-## How to use this template
-
-1. Clone this repository
-2. Rename the package `com.example.plugin` to your package name
-3. Rename the class `ExamplePlugin` to your plugin name
-4. Rename the file `ExamplePlugin.java` to your plugin name
-5. fill in the `lavalinkPlugin` in [build.gradle.kts](build.gradle.kts)
-6. Write your plugin
-
-## How to test your plugin
-
-1. Place a `application.yml` file in the root directory
-2. Run `./gradlew runLavlaink` (for windows: `./gradlew.bat runLavlaink`) in the root directory
-3. The plugin will be loaded
-4. You can now test your plugin
-5. If you change something in the plugin, you can just run `./gradlew runLavlaink` again
-
-## How to build your plugin
-
-1. Run `./gradlew build` (for windows: `./gradlew.bat build`) in the root directory
-2. The jar file will be in `build/libs/`
-
-## How to publish your plugin
-
-This template uses [jitpack](https://jitpack.io/) to publish the plugin. You just need to push your changes to github
-and jitpack will build the plugin for you.
-
-## How to use your plugin
+## How to use LavaDSPX-Plugin
 
 ```yml
 lavalink:
   plugins:
-    - dependency: com.github.lavalink:lavalink-plugin-template:{VERSION} # replace {VERSION} with the version you want to use
+    - dependency: com.github.devoxin:lavadspx-plugin:{VERSION} # replace {VERSION} with the latest version from the "Releases" tab.
       repository: https://jitpack.io
 ```
 
+Once enabled, you can then send a [player update](https://lavalink.dev/api/rest#update-player) with the desired filters, e.g.
+```js
+{
+  "filters": {
+    "pluginFilters": {
+      "high-pass": { // Cuts off frequencies lower than the specified {cutoffFrequency}.
+        "cutoffFrequency": 80 // Integer, higher than zero, in Hz.
+        "boostFactor": 1.0    // Float, higher than 0.0. This alters volume output. A value of 1.0 means no volume change.
+      },
+      "low-pass": { // Cuts off frequencies higher than the specified {cutoffFrequency}.
+        "cutoffFrequency": 80 // Integer, higher than zero, in Hz.
+        "boostFactor": 1.0    // Float, higher than 0.0. This alters volume output. A value of 1.0 means no volume change.
+      },
+      "normalization": { // Attenuates peaking where peaks have a higher value than {maxAmplitude}. 
+        "maxAmplitude": 0.5 // Float, within the range of 0.0 - 1.0. A value of 0.0 mutes the output.
+        "adaptive": true    // Boolean, whether peak amplitudes should persist. Refer to the note below for more information.
+      },
+      "echo": { // Self-explanatory; provides an echo effect.
+        "echoLength": 0.3, // Float, higher than 0.0, in seconds (1.0 = 1 second).
+        "decay": 0.5       // Float, within the range of 0.0 - 1.0. A value of 1.0 means no decay, and a value of 0.0 means
+                           // immediate decay (no echo effect).
+    }
+  }
+}
+```
+
+> [!NOTE]
+> You can find out more about how the `NormalizationFilter`'s `adaptive` setting works [here](https://github.com/Devoxin/LavaDSPX/blob/main/src/main/java/me/devoxin/lavadspx/NormalizationFilter.java#L39-L43). 
+
 ## How to get help
 
-If you need help, you can join the [Lavalink Discord Server](https://discord.gg/FVqbtGu) and ask in
-the `#plugin-development` channel.
+Join the [Lavalink Discord Server](https://discord.gg/FVqbtGu).
