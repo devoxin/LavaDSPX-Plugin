@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Devoxin:LavaDSPX:1.0.2")
+    implementation("com.github.Devoxin:LavaDSPX:2.0.0")
 }
 
 publishing {
