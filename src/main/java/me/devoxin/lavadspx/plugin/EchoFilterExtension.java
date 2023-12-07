@@ -39,7 +39,7 @@ public class EchoFilterExtension implements AudioFilterExtension {
             return null;
         }
 
-        return new EchoFilter(output, format.sampleRate, echoLength, decay);
+        return new EchoFilter(output, format.sampleRate, format.channelCount, echoLength, decay);
     }
 
     @Override
