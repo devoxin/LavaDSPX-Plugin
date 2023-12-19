@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EchoFilterExtension implements AudioFilterExtension {
-    private static final Logger LOG = LoggerFactory.getLogger(LowPassFilterExtension.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EchoFilterExtension.class);
 
     public EchoFilterExtension() {
         LOG.info("Loaded audio filter: echo");
