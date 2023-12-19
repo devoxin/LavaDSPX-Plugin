@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NormalizationFilterExtension implements AudioFilterExtension {
-    private static final Logger LOG = LoggerFactory.getLogger(LowPassFilterExtension.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NormalizationFilterExtension.class);
 
     public NormalizationFilterExtension() {
         LOG.info("Loaded audio filter: normalization");

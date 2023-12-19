@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "me.devoxin.lavadspx.plugin"
-version = "0.0.2"
+version = "0.0.4"
 
 lavalinkPlugin {
     name = "plugin-template"

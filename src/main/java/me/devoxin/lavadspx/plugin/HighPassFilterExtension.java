@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HighPassFilterExtension implements AudioFilterExtension {
-    private static final Logger LOG = LoggerFactory.getLogger(LowPassFilterExtension.class);
+    private static final Logger LOG = LoggerFactory.getLogger(HighPassFilterExtension.class);
 
     public HighPassFilterExtension() {
         LOG.info("Loaded audio filter: high-pass");
