@@ -16,11 +16,11 @@ Once enabled, you can then send a [player update](https://lavalink.dev/api/rest#
   "filters": {
     "pluginFilters": {
       "high-pass": { // Cuts off frequencies lower than the specified {cutoffFrequency}.
-        "cutoffFrequency": 80 // Integer, higher than zero, in Hz.
+        "cutoffFrequency": 80 // Integer, higher than 0, in Hz.
         "boostFactor": 1.0    // Float, higher than 0.0. This alters volume output. A value of 1.0 means no volume change.
       },
       "low-pass": { // Cuts off frequencies higher than the specified {cutoffFrequency}.
-        "cutoffFrequency": 80 // Integer, higher than zero, in Hz.
+        "cutoffFrequency": 80 // Integer, higher than 0, in Hz.
         "boostFactor": 1.0    // Float, higher than 0.0. This alters volume output. A value of 1.0 means no volume change.
       },
       "normalization": { // Attenuates peaking where peaks are defined as having a higher value than {maxAmplitude}. 
