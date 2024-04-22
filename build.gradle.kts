@@ -8,7 +8,7 @@ group = "me.devoxin.lavadspx.plugin"
 version = "0.0.5"
 
 lavalinkPlugin {
-    name = "plugin-template"
+    name = "lavadspx-plugin"
     apiVersion = libs.versions.lavalink.api
     serverVersion = libs.versions.lavalink.server
     configurePublishing = false
