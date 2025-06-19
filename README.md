@@ -6,7 +6,7 @@ A Lavalink plugin for enabling [LavaDSPX](https://github.com/devoxin/LavaDSPX) f
 ```yml
 lavalink:
   plugins:
-    - dependency: com.github.devoxin:lavadspx-plugin:{VERSION} # replace {VERSION} with the latest version from the "Releases" tab.
+    - dependency: com.github.Devoxin:LavaDSPX-Plugin:{VERSION} # replace {VERSION} with the latest version from the "Releases" tab.
       repository: https://jitpack.io
 ```
 
